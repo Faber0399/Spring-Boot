@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.industriasfrc.ejercicios_1_2_3.entities.Laptop;
 import co.industriasfrc.ejercicios_1_2_3.repositories.Laptoprepository;
+import io.swagger.v3.oas.annotations.Parameter;
 
 
 
@@ -82,7 +83,7 @@ public class Laptopcontroller {
         return ResponseEntity.noContent().build();
 
     }
-
+    @Parameter(hidden = true)
     @DeleteMapping("/api/laptops")
     public ResponseEntity<Laptop> deleteAll(){
         log.info("Rest request for delete All boks");
